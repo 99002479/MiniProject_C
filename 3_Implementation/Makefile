@@ -12,6 +12,10 @@ src/calculator_operations.c\
 TEST_SRC = src/calculator_operations.c\
 test/test_calculator_operations.c
 
+# Create new build folder if not present
+$(BUILD):
+	mkdir build
+	
 TEST_OUTPUT = $(BUILD)/Test_$(PROJECT_NAME).out
 
 # All include folders with header files
@@ -48,6 +52,4 @@ test:$(BUILD)
 clean:
 	rm -rf $(BUILD) $(DOCUMENTATION_OUTPUT)
 
-# Create new build folder if not present
-$(BUILD):
-	mkdir build
+
